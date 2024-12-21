@@ -1,11 +1,9 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div>
-    <Header />
+    Layout: UserLayout
     <slot />
-    <Footer />
   </div>
 </template>
 
