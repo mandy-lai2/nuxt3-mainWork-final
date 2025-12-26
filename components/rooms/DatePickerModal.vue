@@ -220,7 +220,7 @@ const clearDate = () => {
           >
             <DatePicker
               :key="tempDate.key"
-              v-model.range.string="tempDate.date"
+               v-model.range.string="tempDate.date" 
               color="primary"
               :masks="masks"
               :first-day-of-week="1"
