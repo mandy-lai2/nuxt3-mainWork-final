@@ -130,13 +130,7 @@ const roomImages = computed(() => {
           各種房型，任您挑選
         </h2>
         <ul class="d-flex flex-column gap-6 gap-md-12 list-unstyled">
-<<<<<<< HEAD
           <li class="card flex-lg-row border-0 rounded-3xl overflow-hidden" v-for="room in roomList" :key="room._id">
-=======
-          <li
-            class="card flex-lg-row border-0 rounded-3xl overflow-hidden"
-          >
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             <div class="row">
               <div class="col-12 col-lg-7">
                 <swiper
@@ -150,33 +144,19 @@ const roomImages = computed(() => {
                   }"
                 >
                   <swiper-slide
-<<<<<<< HEAD
                     v-for="(imgUrl, index) in room.imageUrlList"
-=======
-                    v-for="(num, index) in 5"
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     :key="index"
                   >
                     <picture>
                       <source
-<<<<<<< HEAD
                         :srcset="imgUrl"
-=======
-                        :srcset="roomImages.roomA[num].desktop"
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                         media="(min-width: 768px)"
                       >
                       <img
                         class="w-100 object-fit-cover"
-<<<<<<< HEAD
                         :src="imgUrl"
                         loading="lazy"
                         :alt="`room-${index}`"
-=======
-                        :src="roomImages.roomA[num].mobile"
-                        loading="lazy"
-                        :alt="`room-a-${num}`"
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       >
                     </picture>
                   </swiper-slide>
@@ -185,17 +165,10 @@ const roomImages = computed(() => {
               <div class="col-12 col-lg-5">
                 <div class="card-body pe-md-10 py-md-10">
                   <h3 class="card-title fs-2 fw-bold text-neutral-100">
-<<<<<<< HEAD
                     {{room.name}}
                   </h3>
                   <p class="card-text mb-6 mb-md-10 fs-8 fs-md-7 fw-medium text-neutral-80">
                     {{room.description}}
-=======
-                    尊爵雙人房
-                  </h3>
-                  <p class="card-text mb-6 mb-md-10 fs-8 fs-md-7 fw-medium text-neutral-80">
-                    享受高級的住宿體驗，尊爵雙人房提供給您舒適寬敞的空間和精緻的裝潢。
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   </p>
                   <ul class="d-flex gap-4 mb-6 mb-md-10 list-unstyled">
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -204,11 +177,7 @@ const roomImages = computed(() => {
                         icon="fluent:slide-size-24-filled"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
-<<<<<<< HEAD
                         {{room.areaInfo}}
-=======
-                        24 坪
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -217,11 +186,7 @@ const roomImages = computed(() => {
                         icon="material-symbols:king-bed"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
-<<<<<<< HEAD
                         {{room.bedInfo}}
-=======
-                        1 張大床
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -230,28 +195,17 @@ const roomImages = computed(() => {
                         icon="ic:baseline-person"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
-<<<<<<< HEAD
                         最多{{room.maxPeople}}人
-=======
-                        2-4 人
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                   </ul>
                   <div class="deco-line w-100 mb-6 mb-md-10" />
                   <div class="d-flex justify-content-between align-items-center fs-7 fs-md-5 text-primary-100">
                     <p class="mb-0 fw-bold">
-<<<<<<< HEAD
                       NT$ {{room.price}}
                     </p>
                     <NuxtLink
                       :to="`/rooms/${room._id}`"
-=======
-                      NT$ 10,000
-                    </p>
-                    <NuxtLink
-                      to="/rooms/A"
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       class="icon-link icon-link-hover text-primary-100"
                     >
                       <Icon
@@ -265,11 +219,7 @@ const roomImages = computed(() => {
             </div>
           </li>
 
-<<<<<<< HEAD
           <!-- <li
-=======
-          <li
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             class="card flex-lg-row border-0 rounded-3xl overflow-hidden"
           >
             <div class="row">

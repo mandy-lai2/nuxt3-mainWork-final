@@ -584,12 +584,8 @@ onMounted(() => {
                   <p class="mb-0 text-neutral-80 fw-bold">
                     梳子
                   </p>
-<<<<<<< HEAD
                 </li> -->
               
-=======
-                </li>
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               </ul>
             </section>
 
@@ -611,10 +607,6 @@ onMounted(() => {
               </ol>
             </section>
           </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
           <div class="d-none d-md-block col-md-5">
             <div
               class="rounded-3xl position-sticky d-flex flex-column gap-10 p-10 ms-auto bg-neutral-0"
@@ -626,7 +618,6 @@ onMounted(() => {
 
               <div class="text-neutral-80">
                 <h2 class="fw-bold">
-<<<<<<< HEAD
                   {{roomInfo.name}}
                 </h2>
                 <p class="mb-0 fw-medium">
@@ -653,28 +644,6 @@ onMounted(() => {
                       rules="required"
                     />
                     <VErrorMessage class="invalid-feedback" name="checkinDate" />
-=======
-                  尊爵雙人房
-                </h2>
-                <p class="mb-0 fw-medium">
-                  享受高級的住宿體驗，尊爵雙人房提供給您舒適寬敞的空間和精緻的裝潢。
-                </p>
-              </div>
-
-              <div>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <div class="form-floating flex-grow-1 flex-shrink-1">
-                    <input
-                      id="checkinInput"
-                      readonly
-                      type="date"
-                      :value="bookingDate.date.start"
-                      class="form-control p-4 pt-9 text-neutral-100 fw-medium border-neutral-100 rounded-3"
-                      style="min-height: 74px;"
-                      placeholder="yyyy-mm-dd"
-                      @click="openModal"
-                    >
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     <label
                       class="text-neutral-80 fw-medium"
                       style="top: 8px;left: 8px;"
@@ -682,7 +651,6 @@ onMounted(() => {
                     >入住
                     </label>
                   </div>
-<<<<<<< HEAD
                   <div class="form-floating flex-grow-1 flex-shrink-1">
                     <VField
                       id="checkoutInput"
@@ -698,20 +666,6 @@ onMounted(() => {
                       rules="required"
                     />
                     <VErrorMessage class="invalid-feedback" name="checkoutDate" />
-=======
-
-                  <div class="form-floating flex-grow-1 flex-shrink-1">
-                    <input
-                      id="checkoutInput"
-                      readonly
-                      type="date"
-                      :value="bookingDate.date.end"
-                      class="form-control p-4 pt-9 text-neutral-100 fw-medium border-neutral-100 rounded-3"
-                      style="min-height: 74px;"
-                      placeholder="yyyy-mm-dd"
-                      @click="openModal"
-                    >
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     <label
                       class="text-neutral-80 fw-medium"
                       style="top: 8px;left: 8px;"
@@ -767,27 +721,17 @@ onMounted(() => {
               </div>
 
               <h5 class="mb-0 text-primary-100 fw-bold">
-<<<<<<< HEAD
                 <!-- NT$ {{roomInfo.price}} -->
                 NT$ {{computedPrice}}
               </h5>
               <!-- <NuxtLink
-=======
-                NT$ 10,000
-              </h5>
-              <NuxtLink
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                 to="/rooms/roomid/booking"
                 class="btn btn-primary-100 py-4 text-neutral-0 fw-bold rounded-3"
               >
                 立即預訂
-<<<<<<< HEAD
               </NuxtLink> -->
               <button type="submit" class="btn btn-primary-100 py-4 text-neutral-0 fw-bold rounded-3" :disabled="!meta.valid">立即預訂</button>
             </VForm>
-=======
-              </NuxtLink>
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             </div>
           </div>
         </div>
@@ -795,11 +739,7 @@ onMounted(() => {
       
       <div class="d-flex d-md-none justify-content-between align-items-center position-fixed bottom-0 w-100 p-3 bg-neutral-0">
         <template v-if="bookingDate.date.end === null">
-<<<<<<< HEAD
           <small class="text-neutral-80 fw-medium">ＮＴ$ {{roomInfo.price}}/ 晚</small>
-=======
-          <small class="text-neutral-80 fw-medium">ＮＴ$ 10,000 / 晚</small>
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
           <button
             class="btn btn-primary-100 px-12 py-4 text-neutral-0 fw-bold rounded-3"
             type="button"
@@ -811,7 +751,6 @@ onMounted(() => {
 
         <template v-else>
           <div class="d-flex flex-column gap-1">
-<<<<<<< HEAD
             <small class="text-neutral-80 fw-medium">ＮＴ$ {{computedPrice}} / {{ daysCount }} 晚 / {{ bookingPeople }} 人</small>
             <span class="text-neutral fs-9 fw-medium text-decoration-underline">{{ daysFormatOnMobile(bookingDate.date?.start) }} - {{ daysFormatOnMobile(bookingDate.date?.end) }}</span>
           </div>
@@ -831,26 +770,6 @@ onMounted(() => {
       @handle-date-change="handleDateChange"
       />
     </ClientOnly>
-=======
-            <small class="text-neutral-80 fw-medium">ＮＴ$ 10,000 / {{ daysCount }} 晚 / {{ bookingPeople }} 人</small>
-            <span class="text-neutral fs-9 fw-medium text-decoration-underline">{{ daysFormatOnMobile(bookingDate.date?.start) }} - {{ daysFormatOnMobile(bookingDate.date?.end) }}</span>
-          </div>
-          <NuxtLink
-          to="/rooms/roomid/booking"
-            class="btn btn-primary-100 px-12 py-4 text-neutral-0 fw-bold rounded-3"
-          >
-            立即預訂
-          </NuxtLink>
-        </template>
-      </div>
-    </section>
-
-    <DatePickerModal
-      ref="datePickerModal"
-      :date-time="bookingDate"
-      @handle-date-change="handleDateChange"
-    />
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
   </main>
 </template>
 
