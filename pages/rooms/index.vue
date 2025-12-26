@@ -2,7 +2,6 @@
 // import { computed, ref } from 'vue';
 // import { RouterLink } from 'vue-router';
 // import { Icon } from '@iconify/vue';
-<<<<<<< HEAD
 import { apiGetRoomList } from '@/api/index';
 
 const { data: roomList } = await apiGetRoomList()
@@ -10,12 +9,6 @@ const { data: roomList } = await apiGetRoomList()
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-=======
-
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -23,7 +16,6 @@ import 'swiper/css/pagination';
 const modules = ref([Autoplay, Navigation, Pagination]);
 
 
-<<<<<<< HEAD
 // const importImage = (url) => {
 //   const image = new URL(url, import.meta.url);
 //   return image.href;
@@ -43,34 +35,6 @@ const modules = ref([Autoplay, Navigation, Pagination]);
 //   }, {});
 //   return result;
 // })
-=======
-const importImage = (url) => {
-  const image = new URL(url, import.meta.url);
- 
-  return image.href;
-}
-
-const roomImages = computed(() => {
-  const rooms = ['a', 'b', 'c', 'd'];
-  const nums = [1, 2, 3, 4, 5];
-
-  const result = rooms.reduce((acc, roomId) => {
-    acc[`room${roomId.toUpperCase()}`] = nums.reduce((obj, num) => {
-      obj[num] = {
-        desktop: importImage(`../../assets/images/room-${roomId}-${num}.png`),
-        mobile: importImage(`../../assets/images/room-${roomId}-sm-${num}.png`)
-      };
-      return obj;
-    }, {});
-
-    return acc;
-  }, {});
-
-  return result;
-})
-
-
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 </script>
 
 <template>
@@ -491,11 +455,7 @@ const roomImages = computed(() => {
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
           </li> -->
-=======
-          </li>
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         </ul>
       </div>
     </section>
