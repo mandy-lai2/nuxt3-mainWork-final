@@ -2,6 +2,7 @@
 // import { computed, ref } from 'vue';
 // import { RouterLink } from 'vue-router';
 // import { Icon } from '@iconify/vue';
+<<<<<<< HEAD
 import { apiGetRoomList } from '@/api/index';
 
 const { data: roomList } = await apiGetRoomList()
@@ -9,6 +10,12 @@ const { data: roomList } = await apiGetRoomList()
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+=======
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,6 +23,7 @@ import 'swiper/css/pagination';
 const modules = ref([Autoplay, Navigation, Pagination]);
 
 
+<<<<<<< HEAD
 // const importImage = (url) => {
 //   const image = new URL(url, import.meta.url);
 //   return image.href;
@@ -35,6 +43,34 @@ const modules = ref([Autoplay, Navigation, Pagination]);
 //   }, {});
 //   return result;
 // })
+=======
+const importImage = (url) => {
+  const image = new URL(url, import.meta.url);
+ 
+  return image.href;
+}
+
+const roomImages = computed(() => {
+  const rooms = ['a', 'b', 'c', 'd'];
+  const nums = [1, 2, 3, 4, 5];
+
+  const result = rooms.reduce((acc, roomId) => {
+    acc[`room${roomId.toUpperCase()}`] = nums.reduce((obj, num) => {
+      obj[num] = {
+        desktop: importImage(`../../assets/images/room-${roomId}-${num}.png`),
+        mobile: importImage(`../../assets/images/room-${roomId}-sm-${num}.png`)
+      };
+      return obj;
+    }, {});
+
+    return acc;
+  }, {});
+
+  return result;
+})
+
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 </script>
 
 <template>
@@ -94,7 +130,13 @@ const modules = ref([Autoplay, Navigation, Pagination]);
           各種房型，任您挑選
         </h2>
         <ul class="d-flex flex-column gap-6 gap-md-12 list-unstyled">
+<<<<<<< HEAD
           <li class="card flex-lg-row border-0 rounded-3xl overflow-hidden" v-for="room in roomList" :key="room._id">
+=======
+          <li
+            class="card flex-lg-row border-0 rounded-3xl overflow-hidden"
+          >
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             <div class="row">
               <div class="col-12 col-lg-7">
                 <swiper
@@ -108,19 +150,33 @@ const modules = ref([Autoplay, Navigation, Pagination]);
                   }"
                 >
                   <swiper-slide
+<<<<<<< HEAD
                     v-for="(imgUrl, index) in room.imageUrlList"
+=======
+                    v-for="(num, index) in 5"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     :key="index"
                   >
                     <picture>
                       <source
+<<<<<<< HEAD
                         :srcset="imgUrl"
+=======
+                        :srcset="roomImages.roomA[num].desktop"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                         media="(min-width: 768px)"
                       >
                       <img
                         class="w-100 object-fit-cover"
+<<<<<<< HEAD
                         :src="imgUrl"
                         loading="lazy"
                         :alt="`room-${index}`"
+=======
+                        :src="roomImages.roomA[num].mobile"
+                        loading="lazy"
+                        :alt="`room-a-${num}`"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       >
                     </picture>
                   </swiper-slide>
@@ -129,10 +185,17 @@ const modules = ref([Autoplay, Navigation, Pagination]);
               <div class="col-12 col-lg-5">
                 <div class="card-body pe-md-10 py-md-10">
                   <h3 class="card-title fs-2 fw-bold text-neutral-100">
+<<<<<<< HEAD
                     {{room.name}}
                   </h3>
                   <p class="card-text mb-6 mb-md-10 fs-8 fs-md-7 fw-medium text-neutral-80">
                     {{room.description}}
+=======
+                    尊爵雙人房
+                  </h3>
+                  <p class="card-text mb-6 mb-md-10 fs-8 fs-md-7 fw-medium text-neutral-80">
+                    享受高級的住宿體驗，尊爵雙人房提供給您舒適寬敞的空間和精緻的裝潢。
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   </p>
                   <ul class="d-flex gap-4 mb-6 mb-md-10 list-unstyled">
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -141,7 +204,11 @@ const modules = ref([Autoplay, Navigation, Pagination]);
                         icon="fluent:slide-size-24-filled"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                         {{room.areaInfo}}
+=======
+                        24 坪
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -150,7 +217,11 @@ const modules = ref([Autoplay, Navigation, Pagination]);
                         icon="material-symbols:king-bed"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                         {{room.bedInfo}}
+=======
+                        1 張大床
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                     <li class="card-info px-4 py-5 border border-primary-40 rounded-3">
@@ -159,17 +230,28 @@ const modules = ref([Autoplay, Navigation, Pagination]);
                         icon="ic:baseline-person"
                       />
                       <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                         最多{{room.maxPeople}}人
+=======
+                        2-4 人
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       </p>
                     </li>
                   </ul>
                   <div class="deco-line w-100 mb-6 mb-md-10" />
                   <div class="d-flex justify-content-between align-items-center fs-7 fs-md-5 text-primary-100">
                     <p class="mb-0 fw-bold">
+<<<<<<< HEAD
                       NT$ {{room.price}}
                     </p>
                     <NuxtLink
                       :to="`/rooms/${room._id}`"
+=======
+                      NT$ 10,000
+                    </p>
+                    <NuxtLink
+                      to="/rooms/A"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                       class="icon-link icon-link-hover text-primary-100"
                     >
                       <Icon
@@ -183,7 +265,11 @@ const modules = ref([Autoplay, Navigation, Pagination]);
             </div>
           </li>
 
+<<<<<<< HEAD
           <!-- <li
+=======
+          <li
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             class="card flex-lg-row border-0 rounded-3xl overflow-hidden"
           >
             <div class="row">
@@ -455,7 +541,11 @@ const modules = ref([Autoplay, Navigation, Pagination]);
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
           </li> -->
+=======
+          </li>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         </ul>
       </div>
     </section>

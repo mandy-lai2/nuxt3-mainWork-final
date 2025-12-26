@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script setup>
 // import 'bootstrap/js/dist/collapse';
 </script>
@@ -212,3 +213,15 @@ $grid-breakpoints: (
 
 
 </style>
+=======
+<script setup></script>
+
+<template>
+  <div>
+    Layout: accountlayout
+    <slot />
+  </div>
+</template>
+
+<style scoped></style>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3

@@ -3,6 +3,7 @@
 // import { RouterLink } from 'vue-router';
 import DatePickerModal from '@/components/rooms/DatePickerModal.vue';
 // import { Icon } from '@iconify/vue';
+<<<<<<< HEAD
 import {apiGetRoom} from "@/api/index"
 const userStore = useUserStore()
 const {userInfo} = storeToRefs(userStore)
@@ -12,10 +13,16 @@ const {setBookingLatest} = bookingStore
 const {bookingLatest} = storeToRefs(bookingStore)
 
 const datePickerModal = ref(null);
+=======
+
+const datePickerModal = ref(null);
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 const openModal = () => {
   datePickerModal.value.openModal();
 }
 
+<<<<<<< HEAD
 const route = useRoute()
 const {roomId} = route.params
 const { data: roomInfo } = await apiGetRoom(roomId)
@@ -32,6 +39,13 @@ const computedPrice = computed(() => {
 });
 
 //日期格式轉換2025-02-20 -> 02 / 20
+=======
+const MAX_BOOKING_PEOPLE = 10;
+const bookingPeople = ref(1);
+
+const daysCount = ref(0);
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 const daysFormatOnMobile = (date) => date?.split('-').slice(1, 3).join(' / ');
 
 const formatDate = (date) => {
@@ -39,9 +53,15 @@ const formatDate = (date) => {
   date.setHours(offsetToUTC8);
   return date.toISOString().split('T')[0];
 };
+<<<<<<< HEAD
 //當前日期
 const currentDate = new Date();
 //日期設定資料
+=======
+
+const currentDate = new Date();
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 const bookingDate = reactive({
   date: {
     start: formatDate(currentDate),
@@ -50,12 +70,17 @@ const bookingDate = reactive({
   minDate: new Date(),
   maxDate: new Date(currentDate.setFullYear(currentDate.getFullYear() + 1))
 });
+<<<<<<< HEAD
 //booking資料更新
+=======
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 const handleDateChange = (bookingInfo) => {
   const { start, end } = bookingInfo.date;
   bookingDate.date.start = start;
   bookingDate.date.end = end;
 
+<<<<<<< HEAD
   bookingPeople.value = bookingInfo?.people || bookingPeople.value;
   daysCount.value = bookingInfo.daysCount.value;
 }
@@ -88,18 +113,35 @@ onMounted(() => {
     bookingPeople.value = bookingLatest.value.orderInfo.peopleNum
   }
 })
+=======
+  bookingPeople.value = bookingInfo?.people || 1;
+  daysCount.value = bookingInfo.daysCount;
+}
+
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 </script>
 
 <template>
   <main class="mt-18 mt-md-30 bg-neutral-100">
     <section class="p-md-20 bg-primary-10">
+<<<<<<< HEAD
       <div class="d-none d-md-block position-relative" >
+=======
+      <div
+        class="d-none d-md-block position-relative"
+      >
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         <div class="d-flex gap-2 rounded-3xl overflow-hidden">
           <div style="width: 52.5vw;">
             <img
               class="w-100"
+<<<<<<< HEAD
               :src="roomInfo.imageUrl"
               :alt="`${roomInfo.name}-1`"
+=======
+              src="@/assets/images/room-a-1.png"
+              alt="room-a-1"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             >
           </div>
           <div
@@ -109,6 +151,7 @@ onMounted(() => {
             <div class="d-flex gap-md-2">
               <img
                 class="w-50"
+<<<<<<< HEAD
                 :src="roomInfo.imageUrlList[0]"
                 :alt="`${roomInfo.name}-2`"
               >
@@ -116,11 +159,21 @@ onMounted(() => {
                 class="w-50"
                 :src="roomInfo.imageUrlList[1]"
                 :alt="`${roomInfo.name}-3`"
+=======
+                src="@/assets/images/room-a-2.png"
+                alt="room-a-2"
+              >
+              <img
+                class="w-50"
+                src="@/assets/images/room-a-3.png"
+                alt="room-a-3"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               >
             </div>
             <div class="d-flex gap-md-2">
               <img
                 class="w-50"
+<<<<<<< HEAD
                 :src="roomInfo.imageUrlList[2]"
                 :alt="`${roomInfo.name}-4`"
               >
@@ -128,6 +181,15 @@ onMounted(() => {
                 class="w-50"
                 :src="roomInfo.imageUrlList[3]"
                 :alt="`${roomInfo.name}-5`"
+=======
+                src="@/assets/images/room-a-4.png"
+                alt="room-a-4"
+              >
+              <img
+                class="w-50"
+                src="@/assets/images/room-a-5.png"
+                alt="room-a-5"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               >
             </div>
           </div>
@@ -143,8 +205,13 @@ onMounted(() => {
       <div class="d-md-none position-relative">
         <img
           class="img-fluid"
+<<<<<<< HEAD
           :src="roomInfo.imageUrl"
           :alt="`${roomInfo.name}-1`"
+=======
+          src="@/assets/images/room-a-1.png"
+          alt="room-a-1"
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         >
         <button
           class="position-absolute btn btn-primary-10 px-8 py-4 text-primary-100 border-primary-100 fw-bold rounded-3"
@@ -162,10 +229,17 @@ onMounted(() => {
           <div class="col-12 col-md-7 d-flex flex-column gap-6 gap-md-20">
             <div>
               <h1 class="mb-4 text-neutral-100 fw-bold">
+<<<<<<< HEAD
                 {{roomInfo.name}}
               </h1>
               <p class="mb-0 text-neutral-80 fs-8 fs-md-7 fw-medium">
                 {{roomInfo.description}}
+=======
+                尊爵雙人房
+              </h1>
+              <p class="mb-0 text-neutral-80 fs-8 fs-md-7 fw-medium">
+                享受高級的住宿體驗，尊爵雙人房提供給您舒適寬敞的空間和精緻的裝潢。
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               </p>
             </div>
 
@@ -180,7 +254,11 @@ onMounted(() => {
                     icon="fluent:slide-size-24-filled"
                   />
                   <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                     {{roomInfo.areaInfo}}
+=======
+                    24 坪
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   </p>
                 </li>
                 <li class="card-info px-4 py-5 bg-neutral-0 border border-primary-40 rounded-3">
@@ -189,7 +267,11 @@ onMounted(() => {
                     icon="material-symbols:king-bed"
                   />
                   <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                     {{roomInfo.bedInfo}}
+=======
+                    1 張大床
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   </p>
                 </li>
                 <li class="card-info px-4 py-5 bg-neutral-0 border border-primary-40 rounded-3">
@@ -198,7 +280,11 @@ onMounted(() => {
                     icon="ic:baseline-person"
                   />
                   <p class="mb-0 fw-bold text-neutral-80 text-nowrap">
+<<<<<<< HEAD
                     2-{{roomInfo.maxPeople}}人
+=======
+                    2-4 人
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   </p>
                 </li>
               </ul>
@@ -209,18 +295,29 @@ onMounted(() => {
                 房間格局
               </h3>
               <ul class="d-flex flex-wrap gap-6 gap-md-10 p-6 bg-neutral-0 fs-8 fs-md-7 rounded-3 list-unstyled">
+<<<<<<< HEAD
                 <template v-for="(layout,idx) in roomInfo.layoutInfo">
                 <li class="d-flex gap-2" v-if="layout.isProvide"  :key="idx">
+=======
+                <li class="d-flex gap-2">
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   <Icon
                     class="fs-5 text-primary-100"
                     icon="material-symbols:check"
                   />
                   <p class="mb-0 text-neutral-80 fw-bold">
+<<<<<<< HEAD
                     {{layout.title}}
                   </p>
                 </li>
               </template>
                 <!-- <li class="d-flex gap-2">
+=======
+                    市景
+                  </p>
+                </li>
+                <li class="d-flex gap-2">
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   <Icon
                     class="fs-5 text-primary-100"
                     icon="material-symbols:check"
@@ -255,7 +352,11 @@ onMounted(() => {
                   <p class="mb-0 text-neutral-80 fw-bold">
                     樓層電梯
                   </p>
+<<<<<<< HEAD
                 </li> -->
+=======
+                </li>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               </ul>
             </section>
 
@@ -264,6 +365,7 @@ onMounted(() => {
                 房內設備
               </h3>
               <ul class="d-flex flex-wrap row-gap-2 column-gap-10 p-6 mb-0 bg-neutral-0 fs-8 fs-md-7 rounded-3 list-unstyled">
+<<<<<<< HEAD
                 <template v-for="(facility,idx) in roomInfo.facilityInfo">
                   <li class="flex-item d-flex gap-2"  v-if="facility.isProvide"  :key="idx">
                     <Icon
@@ -276,6 +378,18 @@ onMounted(() => {
                   </li>
                 </template>
                 <!-- <li class="flex-item d-flex gap-2">
+=======
+                <li class="flex-item d-flex gap-2">
+                  <Icon
+                    class="fs-5 text-primary-100"
+                    icon="material-symbols:check"
+                  />
+                  <p class="mb-0 text-neutral-80 fw-bold">
+                    平面電視
+                  </p>
+                </li>
+                <li class="flex-item d-flex gap-2">
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   <Icon
                     class="fs-5 text-primary-100"
                     icon="material-symbols:check"
@@ -355,7 +469,11 @@ onMounted(() => {
                   <p class="mb-0 text-neutral-80 fw-bold">
                     音響
                   </p>
+<<<<<<< HEAD
                 </li> -->
+=======
+                </li>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               </ul>
             </section>
 
@@ -364,6 +482,7 @@ onMounted(() => {
                 備品提供
               </h3>
               <ul class="d-flex flex-wrap row-gap-2 column-gap-10 p-6 mb-0 bg-neutral-0 fs-8 fs-md-7 rounded-3 list-unstyled">
+<<<<<<< HEAD
                 <template  v-for="(amenity,idx) in roomInfo.amenityInfo">
                   <li class="flex-item d-flex gap-2"  v-if="amenity.isProvide" :key="idx">
                     <Icon class="fs-5 text-primary-100" icon="material-symbols:check" />
@@ -374,6 +493,18 @@ onMounted(() => {
                 </template>
 
                 <!-- <li class="flex-item d-flex gap-2">
+=======
+                <li class="flex-item d-flex gap-2">
+                  <Icon
+                    class="fs-5 text-primary-100"
+                    icon="material-symbols:check"
+                  />
+                  <p class="mb-0 text-neutral-80 fw-bold">
+                    衛生紙
+                  </p>
+                </li>
+                <li class="flex-item d-flex gap-2">
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                   <Icon
                     class="fs-5 text-primary-100"
                     icon="material-symbols:check"
@@ -453,8 +584,12 @@ onMounted(() => {
                   <p class="mb-0 text-neutral-80 fw-bold">
                     梳子
                   </p>
+<<<<<<< HEAD
                 </li> -->
               
+=======
+                </li>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
               </ul>
             </section>
 
@@ -476,7 +611,10 @@ onMounted(() => {
               </ol>
             </section>
           </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
           <div class="d-none d-md-block col-md-5">
             <div
               class="rounded-3xl position-sticky d-flex flex-column gap-10 p-10 ms-auto bg-neutral-0"
@@ -488,6 +626,7 @@ onMounted(() => {
 
               <div class="text-neutral-80">
                 <h2 class="fw-bold">
+<<<<<<< HEAD
                   {{roomInfo.name}}
                 </h2>
                 <p class="mb-0 fw-medium">
@@ -514,6 +653,28 @@ onMounted(() => {
                       rules="required"
                     />
                     <VErrorMessage class="invalid-feedback" name="checkinDate" />
+=======
+                  尊爵雙人房
+                </h2>
+                <p class="mb-0 fw-medium">
+                  享受高級的住宿體驗，尊爵雙人房提供給您舒適寬敞的空間和精緻的裝潢。
+                </p>
+              </div>
+
+              <div>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <div class="form-floating flex-grow-1 flex-shrink-1">
+                    <input
+                      id="checkinInput"
+                      readonly
+                      type="date"
+                      :value="bookingDate.date.start"
+                      class="form-control p-4 pt-9 text-neutral-100 fw-medium border-neutral-100 rounded-3"
+                      style="min-height: 74px;"
+                      placeholder="yyyy-mm-dd"
+                      @click="openModal"
+                    >
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     <label
                       class="text-neutral-80 fw-medium"
                       style="top: 8px;left: 8px;"
@@ -521,6 +682,7 @@ onMounted(() => {
                     >入住
                     </label>
                   </div>
+<<<<<<< HEAD
                   <div class="form-floating flex-grow-1 flex-shrink-1">
                     <VField
                       id="checkoutInput"
@@ -536,6 +698,20 @@ onMounted(() => {
                       rules="required"
                     />
                     <VErrorMessage class="invalid-feedback" name="checkoutDate" />
+=======
+
+                  <div class="form-floating flex-grow-1 flex-shrink-1">
+                    <input
+                      id="checkoutInput"
+                      readonly
+                      type="date"
+                      :value="bookingDate.date.end"
+                      class="form-control p-4 pt-9 text-neutral-100 fw-medium border-neutral-100 rounded-3"
+                      style="min-height: 74px;"
+                      placeholder="yyyy-mm-dd"
+                      @click="openModal"
+                    >
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                     <label
                       class="text-neutral-80 fw-medium"
                       style="top: 8px;left: 8px;"
@@ -591,17 +767,27 @@ onMounted(() => {
               </div>
 
               <h5 class="mb-0 text-primary-100 fw-bold">
+<<<<<<< HEAD
                 <!-- NT$ {{roomInfo.price}} -->
                 NT$ {{computedPrice}}
               </h5>
               <!-- <NuxtLink
+=======
+                NT$ 10,000
+              </h5>
+              <NuxtLink
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
                 to="/rooms/roomid/booking"
                 class="btn btn-primary-100 py-4 text-neutral-0 fw-bold rounded-3"
               >
                 立即預訂
+<<<<<<< HEAD
               </NuxtLink> -->
               <button type="submit" class="btn btn-primary-100 py-4 text-neutral-0 fw-bold rounded-3" :disabled="!meta.valid">立即預訂</button>
             </VForm>
+=======
+              </NuxtLink>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
             </div>
           </div>
         </div>
@@ -609,7 +795,11 @@ onMounted(() => {
       
       <div class="d-flex d-md-none justify-content-between align-items-center position-fixed bottom-0 w-100 p-3 bg-neutral-0">
         <template v-if="bookingDate.date.end === null">
+<<<<<<< HEAD
           <small class="text-neutral-80 fw-medium">ＮＴ$ {{roomInfo.price}}/ 晚</small>
+=======
+          <small class="text-neutral-80 fw-medium">ＮＴ$ 10,000 / 晚</small>
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
           <button
             class="btn btn-primary-100 px-12 py-4 text-neutral-0 fw-bold rounded-3"
             type="button"
@@ -621,6 +811,7 @@ onMounted(() => {
 
         <template v-else>
           <div class="d-flex flex-column gap-1">
+<<<<<<< HEAD
             <small class="text-neutral-80 fw-medium">ＮＴ$ {{computedPrice}} / {{ daysCount }} 晚 / {{ bookingPeople }} 人</small>
             <span class="text-neutral fs-9 fw-medium text-decoration-underline">{{ daysFormatOnMobile(bookingDate.date?.start) }} - {{ daysFormatOnMobile(bookingDate.date?.end) }}</span>
           </div>
@@ -640,6 +831,26 @@ onMounted(() => {
       @handle-date-change="handleDateChange"
       />
     </ClientOnly>
+=======
+            <small class="text-neutral-80 fw-medium">ＮＴ$ 10,000 / {{ daysCount }} 晚 / {{ bookingPeople }} 人</small>
+            <span class="text-neutral fs-9 fw-medium text-decoration-underline">{{ daysFormatOnMobile(bookingDate.date?.start) }} - {{ daysFormatOnMobile(bookingDate.date?.end) }}</span>
+          </div>
+          <NuxtLink
+          to="/rooms/roomid/booking"
+            class="btn btn-primary-100 px-12 py-4 text-neutral-0 fw-bold rounded-3"
+          >
+            立即預訂
+          </NuxtLink>
+        </template>
+      </div>
+    </section>
+
+    <DatePickerModal
+      ref="datePickerModal"
+      :date-time="bookingDate"
+      @handle-date-change="handleDateChange"
+    />
+>>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
   </main>
 </template>
 
