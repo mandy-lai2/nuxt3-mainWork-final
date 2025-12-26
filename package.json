@@ -18,10 +18,7 @@
     "bootstrap": "^5.3.3",
     "dayjs": "^1.11.13",
     "nuxt": "^3.14.0",
-<<<<<<< HEAD
     "pinia": "^2.3.1",
-=======
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
     "swiper": "^11.1.14",
     "v-calendar": "^3.1.2",
     "vue": "latest",
