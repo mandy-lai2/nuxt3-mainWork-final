@@ -21,11 +21,7 @@ const openModal = () => {
 const closeModal = () => {
   modal.value.hide();
 }
-<<<<<<< HEAD
 // defineExpose() 是Vue 3中的一個函數，用於將一個元件的屬性或方法暴露給其父元件。當一個元件內部定義了一些屬性或方法，並希望其父元件能夠直接存取這些屬性或方法時，可以使用 defineExpose 來實作。
-=======
-
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 defineExpose({
   openModal,
   closeModal
@@ -83,15 +79,9 @@ const daysCount = computed(() => {
 const MAX_BOOKING_PEOPLE = 10;
 const bookingPeopleMobile = ref(1);
 
-<<<<<<< HEAD
 //為了手機板畫面設定
 const isConfirmDateOnMobile = ref(false);
 //只有手機板 確定日期true，重新選日期false
-=======
-
-const isConfirmDateOnMobile = ref(false);
-
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
 const confirmDateOnMobile = () => {
   isConfirmDateOnMobile.value = true;
 }
@@ -136,10 +126,7 @@ const clearDate = () => {
         :class="{'mt-auto': isConfirmDateOnMobile}"
         class="modal-content gap-6 gap-md-10 rounded-3xl"
       >
-<<<<<<< HEAD
       <!-- mobile -->
-=======
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         <div class="d-md-none modal-header px-6 py-4 bg-neutral-40">
           <div class="d-flex flex-column gap-4">
             <button
@@ -171,10 +158,7 @@ const clearDate = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       <!-- md以上顯示 -->
-=======
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         <div class="d-none d-md-flex modal-header gap-15 p-8 pb-0 border-0">
           <div>
             <h3
@@ -227,13 +211,9 @@ const clearDate = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <!-- 日期選擇器 -->
         <div class="modal-body px-6 px-md-8 py-0">
           <!-- 電腦版不會消失，只有手機板會 -->
-=======
-        <div class="modal-body px-6 px-md-8 py-0">
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
           <div
             v-if="!isConfirmDateOnMobile"
             class="date-picker"
@@ -302,11 +282,8 @@ const clearDate = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
 
         <!-- md以上顯示 -->
-=======
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         <div
           class="d-none d-md-flex modal-footer p-3 p-md-8 pt-0 border-0"
         >
@@ -325,11 +302,7 @@ const clearDate = () => {
             確定日期
           </button>
         </div>
-<<<<<<< HEAD
         <!-- mobile -->
-=======
-        
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
         <div
           class="d-md-none modal-footer p-3 p-md-8 pt-0 border-0"
         >

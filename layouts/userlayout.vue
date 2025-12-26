@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <script setup>
 const userStore = useUserStore()
 const { userInfo } = storeToRefs(userStore)
@@ -139,15 +138,3 @@ $grid-breakpoints: (
   border-radius: 10px;
 }
 </style>
-=======
-<script setup></script>
-
-<template>
-  <div>
-    Layout: UserLayout
-    <slot />
-  </div>
-</template>
-
-<style scoped></style>
->>>>>>> 0816024d8c1eeb0d4612476f0f8f35b3c01ad0a3
