@@ -1,26 +1,9 @@
 <script setup>
-  import { apiPostVerifyEmail } from "@/api/index"
-  const isEmailAndPasswordValid = ref(false);
-  //1.驗證帳密 (/api/v1/verify/email)
-  //2.註冊帳號 (/api/v1/user/signup)
+// import { ref } from 'vue';
+// import { RouterLink } from 'vue-router';
+// import { Icon } from '@iconify/vue';
 
-
-  const verifyEmailPassword = async (inputValue)=>{
-    console.log("inputValue->",inputValue);
-    const { result } = await apiPostVerifyEmail(inputValue)
-    console.log("result=>", result.isEmailExists);
-    if(result.isEmailExists){
-      alert("帳號已存在")
-      return
-    }
-    if(inputValue !== inputValue){
-      alert("密碼不一致")
-      return
-    }
-    isEmailAndPasswordValid.value = true
-    //儲存帳號密碼~~~~~~~
-  }
-
+const isEmailAndPasswordValid = ref(false);
 </script>
 
 <template>
@@ -71,7 +54,10 @@
     </div>
 
     <div class="mb-4">
-      <VForm v-slot="{ errors, meta }" :class="{'d-none': isEmailAndPasswordValid}" class="mb-4" @submit="verifyEmailPassword">
+      <form
+        :class="{'d-none': isEmailAndPasswordValid}"
+        class="mb-4"
+      >
         <div class="mb-4 fs-8 fs-md-7">
           <label
             class="mb-2 text-neutral-0 fw-bold"
@@ -79,14 +65,12 @@
           >
             電子信箱
           </label>
-          
-          <VField id="email" name="email"
+          <input
+            id="email"
             class="form-control p-4 text-neutral-100 fw-medium border-neutral-40"
-            :class="{ 'is-invalid': errors['email'] }"
             placeholder="hello@exsample.com"
             type="email"
-            rules="required|email" />
-          <VErrorMessage class="invalid-feedback" name="email" />
+          >
         </div>
         <div class="mb-4 fs-8 fs-md-7">
           <label
@@ -95,15 +79,12 @@
           >
             密碼
           </label>
-          <VField
-            id="password" name="password"
+          <input
+            id="password"
             class="form-control p-4 text-neutral-100 fw-medium border-neutral-40"
-            :class="{ 'is-invalid': errors['password'] }"
-            placeholder="密碼需至少 8 碼以上"
+            placeholder="請輸入密碼"
             type="password"
-            rules="required|min:8"
-          />
-          <VErrorMessage class="invalid-feedback" name="password" />
+          >
         </div>
         <div class="mb-10 fs-8 fs-md-7">
           <label
@@ -112,26 +93,21 @@
           >
             確認密碼
           </label>
-          <VField
-            id="confirmPassword" name="confirmPassword"
+          <input
+            id="confirmPassword"
             class="form-control p-4 text-neutral-100 fw-medium border-neutral-40"
-            :class="{ 'is-invalid': errors['password'] }"
             placeholder="請再輸入一次密碼"
             type="password"
-            rules="required|min:8"
-          />
-          <VErrorMessage class="invalid-feedback" name="confirmPassword" />
+          >
         </div>
         <button
           class="btn btn-neutral-40 w-100 py-4 text-neutral-60 fw-bold"
-          type="submit"
-          :disabled="!meta.valid"
+          type="button"
+          @click="isEmailAndPasswordValid = true"
         >
           下一步
         </button>
-        <!-- @click="isEmailAndPasswordValid = true" -->
-      </VForm>
-
+      </form>
       <form
         :class="{'d-none': !isEmailAndPasswordValid}"
         class="mb-4"
@@ -299,49 +275,49 @@
 </template>
 
 <style lang="scss" scoped>
-  @import "bootstrap/scss/mixins/breakpoints";
-  
-  $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px,
-    xxxl: 1537px
-  );
-  
-  
-  input[type="password"] {
-    font: small-caption;
-    font-size: 1.5rem;
+@import "bootstrap/scss/mixins/breakpoints";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1537px
+);
+
+
+input[type="password"] {
+  font: small-caption;
+  font-size: 1.5rem;
+}
+
+input::placeholder {
+  color: #909090;
+  font-size: 1rem;
+  font-weight: 500;
+
+  @include media-breakpoint-down(md) {
+    font-size: 14px;
   }
-  
-  input::placeholder {
-    color: #909090;
-    font-size: 1rem;
-    font-weight: 500;
-  
-    @include media-breakpoint-down(md) {
-      font-size: 14px;
-    }
-  }
-  
-  .form-check-input {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  
-  .form-check-input:checked {
-    background-color: #BF9D7D;
-    border-color: #BF9D7D;
-  }
-  
-  .step {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-  }
-  </style>
+}
+
+.form-check-input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.form-check-input:checked {
+  background-color: #BF9D7D;
+  border-color: #BF9D7D;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+</style>

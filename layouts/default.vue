@@ -1,10 +1,11 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
   <div>
     <Header />
-    Layout: frontLayout default
     <slot />
+    <Footer />
   </div>
 </template>
 

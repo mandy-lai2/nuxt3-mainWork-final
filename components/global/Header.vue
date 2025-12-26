@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+// import { ref, onMounted, onUnmounted, computed } from 'vue';
 // import { RouterLink, useRoute } from 'vue-router'
 // import { Icon } from '@iconify/vue';
 
@@ -75,9 +75,7 @@ onUnmounted(() => {
           <ul class="navbar-nav gap-4 ms-auto fw-bold">
             <li class="nav-item">
               <NuxtLink
-                :to="{
-                  name: 'rooms'
-                }"
+                to="/rooms"
                 class="nav-link p-4 text-neutral-0"
               >
                 客房旅宿
@@ -101,23 +99,23 @@ onUnmounted(() => {
                   style="right: 0; left: auto; border-radius: 20px;"
                 >
                   <li>
-                    <a
+                    <NuxtLink
                       class="dropdown-item px-6 py-4"
-                      href="#"
-                    >我的帳戶</a>
+                      :to="`/user/${route.params.userId}/profile`"
+                    >我的帳戶</NuxtLink>
                   </li>
                   <li>
-                    <a
+                    <NuxtLink
                       class="dropdown-item px-6 py-4"
-                      href="#"
-                    >登出</a>
+                      to="/account/login"
+                    >登出</NuxtLink>
                   </li>
                 </ul>
               </div>
             </li>
             <li class="d-md-none nav-item">
               <NuxtLink
-                to="/"
+                to="/account/login"
                 class="nav-link p-4 text-neutral-0"
               >
                 會員登入
@@ -125,9 +123,7 @@ onUnmounted(() => {
             </li>
             <li class="nav-item">
               <NuxtLink
-                :to="{
-                  name: 'rooms'
-                }"
+                to="/rooms"
                 class="btn btn-primary-100 px-8 py-4 text-white fw-bold border-0 rounded-3"
               >
                 立即訂房

@@ -1,12 +1,11 @@
 <script setup>
  definePageMeta({
-    layout:''
+    layout:'accountlayout'
   })
 </script>
 
 <template>
   <div>
-    <h1>Account Page Content</h1>
     <NuxtPage />
   </div>
 </template>
